@@ -1,0 +1,25 @@
+// flex布局，justify-content传值
+@mixin flex-align($justify-content:inherit) {
+  display: flex;
+  align-items: center;
+  @if $justify-content == center {
+    justify-content: center;
+  }
+  @else if $justify-content == space-between{
+    justify-content:  space-between;
+  }
+}
+// 文字移除隐藏，默认1行，传参多行
+@mixin overflow-ellipsis($line:1){
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @if $line == 1{
+    white-space: nowrap;
+  }
+  @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+  }
+}
+
